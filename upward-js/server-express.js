@@ -10,10 +10,11 @@ async function serve() {
   const upwardMiddleware = await middleware(
     `${__dirname}/upward-ssr-styled.yml`,
     {
-      POKEMON_GRAPHQL_URL: 'https://graphql-pokemon.now.sh',
       COUNTRIES_GRAPHQL_URL: 'https://countries.trevorblades.com'
     }
   );
+
+  //https://github.com/trevorblades/countries
 
   app.use(upwardMiddleware);
 

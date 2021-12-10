@@ -1,0 +1,25 @@
+status: response.status # [Go to 1]
+headers: response.headers # [Go to 1]
+body: response.body # [Go to 1]
+
+# 1
+response:
+  when:
+    - matches: request.url.pathname
+      pattern: '^/countries/graphql'
+      use: countriesGQL 
+  default: helloWorld
+
+countriesGQL:
+  target:
+    inline: 'https://countries.trevorblades.com' 
+
+helloWorld:
+  inline:
+    status: 200
+    headers:
+      inline:
+        content-type:
+          inline: text/html
+    body:
+      inline: 'Hello World'
