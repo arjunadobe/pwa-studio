@@ -1,0 +1,17 @@
+{
+  "name": "upward",
+  "version": "1.0.0",
+  "description": "upward example",
+  "main": "index.js",
+  "author": "arjun",
+  "license": "MIT",
+  "scripts": {
+    "start": "node server.js",
+    "start:express": "node server-express.js"
+  },
+  "dependencies": {
+    "@magento/upward-js": "^5.2.0",
+    "express": "^4.17.1",
+    "react": "~17.0.1"
+  }
+}
